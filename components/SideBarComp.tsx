@@ -8,6 +8,7 @@ import {
   Button,
   Heading,
   Code,
+  Tab
 } from "evergreen-ui";
 import { onePlayerExample, allPlayersExample } from "../public/examples";
 import { CodeBlock, dracula } from "react-code-blocks";
@@ -43,10 +44,11 @@ const SideBarComp = () => {
       <Tablist marginBottom={16} flexBasis={400} marginRight={24}>
         {tabs.map((tab, index) => (
           <>
-            <Heading size={200} paddingBottom={5}>
+            <Heading size={300} paddingBottom={5}>
               {tab.description}
             </Heading>
-            <SidebarTab
+            <Tab
+              width='100%'
               key={tab.id}
               id={tab.id}
               onSelect={() => setSelectedIndex(index)}
@@ -63,7 +65,7 @@ const SideBarComp = () => {
               >
                 Copy
               </Button>
-            </SidebarTab>
+            </Tab>
           </>
         ))}
       </Tablist>
@@ -80,7 +82,7 @@ const SideBarComp = () => {
             borderRadius="10px"
           >
             <Pane flex="1">
-              <Paragraph fontFamily="monospace">
+              <Paragraph>
                 <CodeBlock
                   text={tab.example}
                   language={"javascript"}
