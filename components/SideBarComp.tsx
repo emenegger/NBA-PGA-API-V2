@@ -37,7 +37,9 @@ const SideBarComp = () => {
     },
   ]);
 
-  console.log(tabs);
+  const copy = () => {
+    navigator.clipboard.writeText(props.terminalCommand);
+  }
 
   return (
     <Pane display="flex" height={240} padding={16}>
@@ -60,8 +62,9 @@ const SideBarComp = () => {
               {tab.string}
               <Button
                 size="small"
-                onClick={() =>
-                  toaster.success(`Copied to Clipboard: ${tab.string} `)
+                onClick={() => {
+                  navigator.clipboard.writeText(tab.string)
+                  toaster.success(`Copied to Clipboard: ${tab.string} `)}
                 }
               >
                 Copy
