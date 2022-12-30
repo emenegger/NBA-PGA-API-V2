@@ -26,6 +26,10 @@ const queries = `[
 export default function Home() {
   return (
     <>
+    <Head>
+        <title>NBA PGA API</title>
+        <meta content="NBA PGA API" key="title" />
+      </Head>
       <Pane
         display="flex"
         flexDirection="column"

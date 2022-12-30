@@ -80,6 +80,7 @@ const SideBarComp = () => {
             aria-hidden={index !== selectedIndex}
             display={index === selectedIndex ? "block" : "none"}
             borderRadius="10px"
+            background="#FAFBFF"
           >
               <Paragraph
                 fontFamily="mono"
