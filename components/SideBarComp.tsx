@@ -11,7 +11,7 @@ import {
   Tab
 } from "evergreen-ui";
 import { onePlayerExample, allPlayersExample } from "../public/examples";
-import { CodeBlock, dracula } from "react-code-blocks";
+import { CodeBlock, googlecode,} from "react-code-blocks";
 
 const SideBarComp = () => {
   const [selectedIndex, setSelectedIndex] = React.useState(0);
@@ -37,13 +37,9 @@ const SideBarComp = () => {
     },
   ]);
 
-  const copy = () => {
-    navigator.clipboard.writeText(props.terminalCommand);
-  }
-
   return (
-    <Pane display="flex" height={240} padding={16}>
-      <Tablist marginBottom={16} flexBasis={400} marginRight={24}>
+    <Pane display="flex" height={240} padding={16} background="tint1">
+      <Tablist marginBottom={16} flexBasis={500} marginRight={24}>
         {tabs.map((tab, index) => (
           <>
             <Heading size={300} padding={10}>
@@ -74,7 +70,7 @@ const SideBarComp = () => {
         ))}
       </Tablist>
 
-      <Pane padding={16} background="tint1" flex="1">
+      <Pane padding={16} background="tint1" flex="1" height='100vh'>
         {tabs.map((tab, index) => (
           <Pane
             key={tab.description + tab.id}
@@ -85,17 +81,19 @@ const SideBarComp = () => {
             display={index === selectedIndex ? "block" : "none"}
             borderRadius="10px"
           >
-            <Pane flex="1">
-              <Paragraph>
+              <Paragraph
+                fontFamily="mono"
+                // fontSize='small'
+                size={300}
+              >
                 <CodeBlock
                   text={tab.example}
                   language={"javascript"}
                   showLineNumbers={true}
-                  theme={dracula}
+                  theme={googlecode}
                 />
               </Paragraph>
             </Pane>
-          </Pane>
         ))}
       </Pane>
     </Pane>

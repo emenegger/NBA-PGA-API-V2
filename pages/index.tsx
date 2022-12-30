@@ -38,7 +38,7 @@ export default function Home() {
         <Heading size={600}>Free API for 2022-23 NBA Per Game Averages</Heading>
       </Pane>
       <Pane display="flex" padding={10}>
-        <Heading flexBasis={434}>Query Strings</Heading>
+        <Heading flexBasis={554}>Query Strings</Heading>
         <Heading flex="1">Results</Heading>
       </Pane>
       <SideBarComp />
