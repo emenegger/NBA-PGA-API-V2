@@ -18,19 +18,19 @@ const SideBarComp = () => {
   const [tabs] = React.useState([
     {
       description: "Get All Players' Per Game Averages",
-      string: "https://nba-pga.com/players",
+      string: "https://nba-pga-api.vercel.app/api/players",
       id: "1",
       example: allPlayersExample,
     },
     {
       description: "Get One Player's Per Game Averages",
-      string: "https://nba-pga.com/players/<player-last-name>",
+      string: "https://nba-pga-api.vercel.app/api/players/<player_lastname>",
       id: "2",
       example: onePlayerExample,
     },
     {
       description: "Get Player Image",
-      string: "https://nba-pga.com/imgs/<player-last-name>",
+      string: "https://nba-pga-api.vercel.app/api/players/img/<player_id>",
       id: "3",
       example:
         "https://cdn.nba.com/headshots/nba/latest/1040x760/203954.png?imwidth=1040&imheight=760",
@@ -44,7 +44,7 @@ const SideBarComp = () => {
       <Tablist marginBottom={16} flexBasis={400} marginRight={24}>
         {tabs.map((tab, index) => (
           <>
-            <Heading size={300} paddingBottom={5}>
+            <Heading size={300} padding={10}>
               {tab.description}
             </Heading>
             <Tab
@@ -55,6 +55,7 @@ const SideBarComp = () => {
               isSelected={index === selectedIndex}
               aria-controls={`panel-${tab.description}`}
               justifyContent="space-between"
+              padding={10}
             >
               {tab.string}
               <Button
